@@ -85,9 +85,10 @@ void inorder(struct node *root)
     inorder(root->right);
 }
 
-void viewrootdata(struct node *root)
+int viewrootdata(struct node **root)
 {
-    printf("\nThe root data is %d",root->data);
+    struct node *curr=*root;
+    return curr->data;
 }
 
 int main()
@@ -140,7 +141,7 @@ int main()
         break;
 
         case 7:
-        viewrootdata(root);
+        printf("\n%d Is root data ",viewrootdata(&root));
         break;
 
         case 8:
